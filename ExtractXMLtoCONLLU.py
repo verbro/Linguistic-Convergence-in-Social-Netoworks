@@ -196,7 +196,8 @@ for i, user_pair in enumerate(dynamic_dict):
     interaction_dates = sorted(list(dynamic_dict[user_pair]['dates']), 
                     key= lambda x: datetime.datetime.strptime(x, '%Y-%m-%d %H:%M')) #'%Y-%m-%d %H:%M:%S:' familjeliv
     first_date = interaction_dates[0]
-    threshold_date = datetime.datetime.strptime(first_date, '%Y-%m-%d %H:%M')+ relativedelta(months=1)
+    threshold_datetime = = datetime.datetime.strptime(first_date, '%Y-%m-%d %H:%M')+ relativedelta(months=1)
+    threshold_date = threshold_datetime.strftime('%Y-%m-%d %H:%M')
             
     final_directory = os.path.join(current_directory, folder_to_set+str(i))
     os.mkdir(final_directory)
@@ -225,7 +226,7 @@ for i, user_pair in enumerate(dynamic_dict):
                     listdates[j] = sen_date
                 sen_counts[j] += 1
             elif (datetime.datetime.strptime(sen_date, '%Y-%m-%d %H:%M') >
-            datetime.datetime.strptime(threshold_date, '%Y-%m-%d %H:%M')):
+            threshold_datetime:
                 
                 with open(folder_to_set + str(i) + '/after' + str(j) + ".CONLLU", 'a', 
                           encoding='utf-8') as out_file:
