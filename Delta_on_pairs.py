@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[1:
 
 
 #packages
@@ -16,7 +16,7 @@ import nltk
 nltk.download('punkt')
 
 
-# In[3]:
+# In[]:
 
 
 #LOOP IT
@@ -169,7 +169,7 @@ for dir_nr in os.listdir(final_directory):
     set_nr += 1
 
 
-# In[ ]:
+# In[]:
 
 
 
