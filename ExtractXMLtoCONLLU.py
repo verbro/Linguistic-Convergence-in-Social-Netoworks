@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[]:
 
 
 #packages
@@ -21,7 +21,7 @@ import os
 import re
 
 
-# In[3]:
+# In[]:
 
 
 #pre-process users and initialize sentence count
@@ -39,7 +39,7 @@ def getUsernames(xml_str):
     return user_dict
 
 
-# In[4]:
+# In[]:
 
 
 #The folder to extract too and subforum to extract from. The XML-files are from Språkbanken Text
@@ -50,7 +50,7 @@ xml_str = 'flashback-mat.xml'
 user_dict1 = getUsernames(xml_str)
 
 
-# In[6]:
+# In[]:
 
 
 #create text files with text and information in CONLLU file format while also counting the number of tokens
@@ -98,7 +98,7 @@ def extractXML(xml_str,thread_dict,user_dict):
     
 
 
-# In[7]:
+# In[]:
 
 
 #thread_dict stores all posts by userid and date in a thread 
@@ -107,7 +107,7 @@ thread_dict = {}
 extractXML(xml_str,thread_dict,user_dict) #start extraction
 
 
-# In[8]:
+# In[]:
 
 
 for idnr in list(user_dict.keys()):
@@ -119,7 +119,7 @@ for idnr in list(user_dict.keys()):
             continue
 
 
-# In[12]:
+# In[]:
 
 
 for thread_id in thread_dict:
@@ -127,7 +127,7 @@ for thread_id in thread_dict:
                     key= lambda x: datetime.datetime.strptime(x[1], '%Y-%m-%d %H:%M')))
 
 
-# In[13]:
+# In[]:
 
 
 #Here are interactions for every pair counted. 
@@ -178,7 +178,7 @@ for thread_id in thread_dict:
                             dynamic_dict[pair_str1]['times'] = 1
 
 
-# In[ ]:
+# In[]:
 
 
 #DYNAMIC CONVERGENCE. This is the normal conversion with all text included for every pair
